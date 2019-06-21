@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'ethomsondemo-acr'
-  imageRepository: 'cloud64'
+  imageRepository: 'hello64'
   containerRegistry: 'ethomsondemo.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
@@ -24,7 +24,7 @@ stages:
   displayName: Build and push stage
   jobs:  
   - job: Build
-    displayName: Build job
+    displayName: Build
     pool:
       vmImage: $(vmImageName)
     steps:
@@ -41,4 +41,4 @@ stages:
       inputs:
         azureSubscription: 'Azure DevOps Community Demo(1a1d858c-e6fb-4704-bdba-70f24b3044c0)'
         appName: 'cloud64'
-        containers: '$(imageRepository)'
+        containers: '$(containerRegistry)/$(imageRepository):$(tag)'
