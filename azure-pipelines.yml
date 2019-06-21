@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'e671cba1-d500-4022-ad91-67537ebd6d3f'
+  dockerRegistryServiceConnection: 'ethomsondemo'
   imageRepository: 'cloud64'
   containerRegistry: 'ethomsondemo.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
